@@ -1,2 +1,6 @@
 env/*
 *.pyc
+website/flask/bin/*
+website/flask/include/*
+website/flask/lib/*
+flask/*
