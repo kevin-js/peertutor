@@ -6,3 +6,8 @@ from flask import url_for, redirect, render_template
 @app.route('/index')
 def index():
 	return render_template('index.html', pagename="Home")
+
+
+@app.route('/registration')
+def registration():
+	return render_template('registration.html', pagename="registration");
