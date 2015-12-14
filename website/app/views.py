@@ -15,3 +15,7 @@ def profile(username):
 		'name' : 'test'
 	}
 	return render_template('profile.html', pagename=username, user_info=user_info)
+
+@app.route('/registration')
+def registration():
+	return render_template('registration.html', pagename="registration");
