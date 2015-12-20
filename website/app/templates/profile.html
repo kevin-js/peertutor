@@ -1,25 +1,47 @@
+<!-- options page for tutors -->
 {% extends 'base.html' %}
+{% block head %}
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Raleway:400,300,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/profile.css') }}">
+{% endblock %}
 {% block content %}
 <div class="container">
 	<div class="row">
-		<div class="col-md-3">
+		<div class="col-xs-3">
 		</div>
-		<div class="col-md-9">
+		<div class="col-xs-9" id="user-profile-box">
 			<div class="row">
 				<div class="col-md-3">
-					<div class="row">
-						<img src="{{ }}">
+					<div class="row" id="user-profile-pic">
+						<img class="img img-circle" src=" {{ url_for('static', filename='images/team01.jpg') }}">
 					</div>
 				</div>
 				<div class="col-md-9">
-					<div class="row"><h6>First Name:</h6></div>
-					<div class="row"><h6>Username:</h6></div>
-					<div class="row"><h6>Password:</h6></div>
+					<div class="row"><h6><b>Real Name:</b> {{user_info['firstname']}}</h6></div>
+					<div class="row"><h6><b>Username:</b> {{user_info['username']}}</h6></div>
+					<div class="row"><div class="col-md-4" style="padding: 0px"><h6><b>Password:</b> </h6></div><div class="col-md-8" style="padding: 0px"><button id="update-password">change</button></div></div>
+					<br />
+					<div class="row" style="margin-top: 20px"><div class="col-md-4" style="padding: 0px"><h4><b>Personal info:</b></h4></div><div class="col-md-8" style="padding: 0px"><button id="update-info">update</button></div></div>
+					<div class="row"><h6><b>Major(s): </b> {% for major in user_info['major'] %} {{ major + ','}} {% endfor %}</h6></div>
+					<div class="row"><h6><b>Year: </b> {{ user_info['class_year']}}</h6></div>
+					<div class="row"><h6><b>Additional self-introduction for tutors (optional):</b></h6></div>
+					<div class="row">
+						{% for paragraph in user_info['bio'] %}
+							<p>{{ paragraph }}</p>
+						{% endfor %}
+					</div>
+					<div class="row" style="margin-top: 20px"><div class="col-md-4" style="padding: 0px"><h4><b>Settings:</b></h4></div><div style="padding: 0px" class="col-md-8"><button id="update-section">update</button></div></div>
+					<div class="row"><h6><b>Notifications by email:</b></h6></div>
+					<div class="row">
+						<fieldset>
+							<input type="checkbox" name="request" value="requested">  When requested for tutoring<br />
+							<input type="checkbox" name="tutees" value="tutees">  Potential tutees<br />
+						</fieldset>
+					</div>
 				</div>
 			</div>
-			<div class="row"></div>
-			<div class="row"></div>
-			<div class="row"></div>
 		</div>
 	</div>
 </div>

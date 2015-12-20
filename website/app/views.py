@@ -12,7 +12,11 @@ def index():
 def profile(username):
 	# TODO: find user info in database
 	user_info = {
-		'name' : 'test'
+		'firstname' : 'test user',
+		'username' : 'lololol',
+		'major' : ['computer science', 'economics'],
+		'class_year' : '2016',
+		'bio' : ['lorem ipsum', 'blahblahblah']
 	}
 	return render_template('profile.html', pagename=username, user_info=user_info)
 
