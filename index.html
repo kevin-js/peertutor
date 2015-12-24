@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/plugins.js"></script>
+
+	<!-- Document Title
+	============================================= -->
+	<title>TutorPeer | Peer to Peer Tutoring</title>
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="transparent-header full-header" data-sticky-class="not-dark">
+
+			<div id="header-wrap">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<!-- Logo
+					============================================= -->
+					<div id="logo">
+						<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img src="images/logo.png" alt="Canvas Logo"></a>
+						<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img src="images/logo@2x.png" alt="Canvas Logo"></a>
+					</div><!-- #logo end -->
+
+					<!-- Primary Navigation
+					============================================= -->
+					<nav id="primary-menu" class="dark">
+
+						<ul>
+							<li class="current"><a href="index.html"><div>Home</div></a>
+							</li>
+							<li class="mega-menu"><a href="#"><div>How it Works</div></a>
+							</li>
+							<li class="mega-menu"><a href="#"><div>Get a Tutor</div></a>
+							</li>
+							<li class="mega-menu"><a href="#"><div>Become a Tutor</div></a>
+							</li>
+							<li class="mega-menu"><a href="#"><div>Login</div></a>
+							</li>
+						</ul>
+
+						<!-- Top Search
+						============================================= -->
+						<div id="top-search">
+							<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+							<form action="search.html" method="get">
+								<input type="text" name="q" class="form-control" value="" placeholder="Find a tutor or class...">
+							</form>
+						</div><!-- #top-search end -->
+
+					</nav><!-- #primary-menu end -->
+
+				</div>
+
+			</div>
+
+		</header><!-- #header end -->
+
+		<section id="slider" class="slider-parallax swiper_wrapper full-screen clearfix">
+
+			<div class="swiper-container swiper-parent">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide dark" style="background-image: url('images/slider/swiper/1.jpg');">
+						<div class="container clearfix">
+							<div class="slider-caption slider-caption-center">
+								<h2 data-caption-animate="fadeInUp">Peers teaching Peers</h2>
+								<p data-caption-animate="fadeInUp" data-caption-delay="100">Talk about what benefits TutorPeer provides. What's so special about peers teaching peers? How is our platform useful for tutors and tutees?</p>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide dark">
+						<div class="container clearfix">
+							<div class="slider-caption slider-caption-center">
+								<h2 data-caption-animate="fadeInUp">Insert TutorPeer Video</h2>
+								<p data-caption-animate="fadeInUp" data-caption-delay="200">We can convert this slide into a moving app showcase or we can just turn it into a static inmage + text slide. </p>
+							</div>
+						</div>
+						<div class="video-wrap">
+							<video id="slide-video" poster="images/videos/explore.jpg" preload="auto" loop autoplay muted>
+								<source src='images/videos/explore.webm' type='video/webm' />
+								<source src='images/videos/explore.mp4' type='video/mp4' />
+							</video>
+							<div class="video-overlay" style="background-color: rgba(0,0,0,0.55);"></div>
+						</div>
+					</div>
+					<div class="swiper-slide" style="background-image: url('images/slider/swiper/3.jpg'); background-position: center top;">
+						<div class="container clearfix">
+							<div class="slider-caption">
+								<h2 data-caption-animate="fadeInUp">Peers teaching Peers</h2>
+								<p data-caption-animate="fadeInUp" data-caption-delay="100">An alternative home page slide.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="slider-arrow-left"><i class="icon-angle-left"></i></div>
+				<div id="slider-arrow-right"><i class="icon-angle-right"></i></div>
+			</div>
+
+			<script>
+				jQuery(document).ready(function($){
+					var swiperSlider = new Swiper('.swiper-parent',{
+						paginationClickable: false,
+						slidesPerView: 1,
+						grabCursor: true,
+						loop: true,
+						onSwiperCreated: function(swiper){
+							$('[data-caption-animate]').each(function(){
+								var $toAnimateElement = $(this);
+								var toAnimateDelay = $(this).attr('data-caption-delay');
+								var toAnimateDelayTime = 0;
+								if( toAnimateDelay ) { toAnimateDelayTime = Number( toAnimateDelay ) + 750; } else { toAnimateDelayTime = 750; }
+								if( !$toAnimateElement.hasClass('animated') ) {
+									$toAnimateElement.addClass('not-animated');
+									var elementAnimation = $toAnimateElement.attr('data-caption-animate');
+									setTimeout(function() {
+										$toAnimateElement.removeClass('not-animated').addClass( elementAnimation + ' animated');
+									}, toAnimateDelayTime);
+								}
+							});
+							SEMICOLON.slider.swiperSliderMenu();
+						},
+						onSlideChangeStart: function(swiper){
+							$('[data-caption-animate]').each(function(){
+								var $toAnimateElement = $(this);
+								var elementAnimation = $toAnimateElement.attr('data-caption-animate');
+								$toAnimateElement.removeClass('animated').removeClass(elementAnimation).addClass('not-animated');
+							});
+							SEMICOLON.slider.swiperSliderMenu();
+						},
+						onSlideChangeEnd: function(swiper){
+							$('#slider').find('.swiper-slide').each(function(){
+								if($(this).find('video').length > 0) { $(this).find('video').get(0).pause(); }
+								if($(this).find('.yt-bg-player').length > 0) { $(this).find('.yt-bg-player').pauseYTP(); }
+							});
+							$('#slider').find('.swiper-slide:not(".swiper-slide-active")').each(function(){
+								if($(this).find('video').length > 0) {
+									if($(this).find('video').get(0).currentTime != 0 ) $(this).find('video').get(0).currentTime = 0;
+								}
+								if($(this).find('.yt-bg-player').length > 0) {
+									$(this).find('.yt-bg-player').getPlayer().seekTo( $(this).find('.yt-bg-player').attr('data-start') );
+								}
+							});
+							if( $('#slider').find('.swiper-slide.swiper-slide-active').find('video').length > 0 ) { $('#slider').find('.swiper-slide.swiper-slide-active').find('video').get(0).play(); }
+							if( $('#slider').find('.swiper-slide.swiper-slide-active').find('.yt-bg-player').length > 0 ) { $('#slider').find('.swiper-slide.swiper-slide-active').find('.yt-bg-player').playYTP(); }
+
+							$('#slider .swiper-slide.swiper-slide-active [data-caption-animate]').each(function(){
+								var $toAnimateElement = $(this);
+								var toAnimateDelay = $(this).attr('data-caption-delay');
+								var toAnimateDelayTime = 0;
+								if( toAnimateDelay ) { toAnimateDelayTime = Number( toAnimateDelay ) + 300; } else { toAnimateDelayTime = 300; }
+								if( !$toAnimateElement.hasClass('animated') ) {
+									$toAnimateElement.addClass('not-animated');
+									var elementAnimation = $toAnimateElement.attr('data-caption-animate');
+									setTimeout(function() {
+										$toAnimateElement.removeClass('not-animated').addClass( elementAnimation + ' animated');
+									}, toAnimateDelayTime);
+								}
+							});
+						}
+					});
+
+					$('#slider-arrow-left').on('click', function(e){
+						e.preventDefault();
+						swiperSlider.swipePrev();
+					});
+
+					$('#slider-arrow-right').on('click', function(e){
+						e.preventDefault();
+						swiperSlider.swipeNext();
+					});
+				});
+			</script>
+
+			<a href="#" data-scrollto="#content" data-offset="100" class="dark one-page-arrow"><i class="icon-angle-down infinite animated fadeInDown"></i></a>
+
+		</section>
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap">
+
+				<div class="container clearfix">
+
+					<div class="row">
+
+						<div class="heading-block center">
+							<h3>Featured Tutors</h3>
+						</div>
+
+						<div class="col-md-3 col-sm-6 bottommargin">
+
+							<div class="team">
+								<div class="team-image">
+									<img src="images/team/1.jpg" alt="John Doe">
+								</div>
+								<div class="team-desc team-desc-bg">
+									<div class="team-title"><h4>John Smith</h4><span>Math</span></div>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="col-md-3 col-sm-6 bottommargin">
+
+							<div class="team">
+								<div class="team-image">
+									<img src="images/team/2.jpg" alt="Josh Clark">
+								</div>
+								<div class="team-desc team-desc-bg">
+									<div class="team-title"><h4>Bob Reese</h4><span>Computer Science</span></div>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="col-md-3 col-sm-6 bottommargin">
+
+							<div class="team">
+								<div class="team-image">
+									<img src="images/team/3.jpg" alt="Mary Jane">
+								</div>
+								<div class="team-desc team-desc-bg">
+									<div class="team-title"><h4>Mary Jane</h4><span>Economics</span></div>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="col-md-3 col-sm-6 bottommargin">
+
+							<div class="team">
+								<div class="team-image">
+									<img src="images/team/4.jpg" alt="Nix Maxwell">
+								</div>
+								<div class="team-desc team-desc-bg">
+									<div class="team-title"><h4>Nix Maxwell</h4><span>Biology</span></div>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				
+				<div class="container clearfix">
+					
+					<div class="clear"></div>
+
+					<div class="col_two_third topmargin nobottommargin">
+
+						<div style="position: relative;" data-height-lg="535" data-height-md="442" data-height-sm="338" data-height-xs="316" data-height-xxs="201">
+							<img  src="images/landing/device1.png" alt="Mac" style="position: absolute; top: 0; left: 0;">
+							<img  src="images/landing/device2.png" alt="iPad" style="position: absolute; top: 0; left: 0;">
+							<img  src="images/landing/device3.png" alt="iPhone" style="position: absolute; top: 0; left: 0;">
+						</div>
+
+					</div>
+
+					<div class="col_one_third topmargin nobottommargin col_last">
+
+						<h3>How it Works</h3>
+
+						<p>Short overview of what TutorPeer is and what benefits it can provide. Lorem ipsum dolor sit amet. Quidem, quos, facilis esse rem dicta dignissimos eligendi earum sapiente ipsam iure vel deserunt? Soluta doloremque aspernatur quis asperiores numquam placeat dolore.</p>
+
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, ab incidunt temporibus rerum odio accusantium.</p>
+
+						<div class="divider divider-short"><i class="icon-circle"></i></div>
+
+						<ul class="iconlist iconlist-large iconlist-color">
+							<li><i class="icon-ok-sign"></i> Feature number one</li>
+							<li><i class="icon-ok-sign"></i> Benefit number one</li>
+							<li><i class="icon-ok-sign"></i> Lorem ipsum dolor sit</li>
+							<li><i class="icon-ok-sign"></i> Consectetur adipisicing</li>
+							<li><i class="icon-ok-sign"></i> Feature and benefits # 3</li>
+						</ul>
+
+					</div>
+				</div>
+
+
+				<div id="section-buy" class="section page-section footer-stick">
+
+					<div class="container clearfix">
+
+						<div class="heading-block title-center nobottomborder">
+							<h2>Ready to get started?</h2>
+						</div>
+
+						<div class="center">
+							<a href="#" class="button button-3d button-teal button-xlarge nobottommargin"><i class="icon-line-search"></i>Find a Tutor</a> - OR - <a href="#" class="button button-3d button-red button-xlarge nobottommargin"><i class="icon-user2"></i>Become a Tutor</a>
+
+						</div>
+
+					</div>
+
+				</div>
+
+
+
+			</div>
+
+		</section><!-- #content end -->
+
+		<!-- Footer
+		============================================= -->
+		<footer id="footer" class="dark">
+
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+					<div class="col_half">
+						Copyrights &copy; 2015-2016<br>
+						<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+					</div>
+
+				</div>
+
+			</div><!-- #copyrights end -->
+
+		</footer><!-- #footer end -->
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="js/functions.js"></script>
+
+</body>
+</html>
