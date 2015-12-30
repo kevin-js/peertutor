@@ -1,5 +1,5 @@
 from app import app
-from flask import url_for, redirect, render_template
+from flask import url_for, redirect, render_template, request
 
 # homepage
 @app.route('/')
@@ -22,4 +22,9 @@ def profile(username):
 
 @app.route('/registration')
 def registration():
-	return render_template('registration.html', pagename="registration");
+	return render_template('registration.html', pagename="registration")
+
+"""TODO: register form data into database """
+@app.route('/signup', methods=['POST'])
+def signup():
+	return render_template('registration.html', pagename="Thanks for signing up!")
